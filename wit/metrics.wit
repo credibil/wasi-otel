@@ -1,12 +1,12 @@
 interface metrics {
-    use wasi:clocks/wall-clock@0.2.8.{datetime};
+    use wasi:clocks/wall-clock@0.2.6.{datetime};
     use types.{key, value, key-value, instrumentation-scope, %resource, error};
 
     /// Gathers and returns all metric data related to the [MetricReader] from the
     /// SDK and stores it in the provided [ResourceMetrics] reference.
     ///
     /// An error is returned if this is called after shutdown.
-    %export: func(rm: resource-metrics) -> result<_, error>;
+    %export: async func(rm: resource-metrics) -> result<_, error>;
 
     /// A collection of scope metrics and the associated resource that created them.
     record resource-metrics {
