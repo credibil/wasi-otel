@@ -1,1 +1,1 @@
-# wasi-otel
+# WASI OpenTelemetry
